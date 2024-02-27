@@ -1,0 +1,23 @@
+// Services Model __________________
+
+const modelViews = document.querySelectorAll('.services__model');
+const modelBtns = document.querySelectorAll('.services__button');
+const modelCloses = document.querySelectorAll('.services__model-close');
+
+let model = function(modelClick) {
+    modelViews[modelClick].classList.add('active-model');
+};
+
+modelBtns.forEach((modelBtn, i) => {
+    modelBtn.addEventListener('click', () => {
+        model(i);
+    });
+});
+
+modelCloses.forEach((modelClose) => {
+  modelClose.addEventListener('click', () => {
+    modelViews.forEach((modelView) => {
+      modelView.classList.remove('active-model');
+    });
+  });
+});
